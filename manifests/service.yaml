@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: eshoplite
+  namespace: eshoplite
+  labels:
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app: eshoplite
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

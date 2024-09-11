@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eshoplite
+  labels:
+    app: eshoplite
+    kubernetes.azure.com/generator: devhub
+  namespace: eshoplite
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eshoplite
+  template:
+    metadata:
+      labels:
+        app: eshoplite
+    spec:
+      containers:
+        - name: eshoplite
+          image: arteiroacr.azurecr.io/eshoplite:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
