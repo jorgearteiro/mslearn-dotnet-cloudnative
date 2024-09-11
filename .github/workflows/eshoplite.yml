@@ -47,7 +47,7 @@ env:
     manifests/deployment.yaml
     manifests/service.yaml
   DOCKER_FILE: Dockerfile
-  BUILD_CONTEXT_PATH: ./
+  BUILD_CONTEXT_PATH: ./dotnet-kubernetes
   NAMESPACE: eshoplite
 
 jobs:
